@@ -1,0 +1,13 @@
+ADN sequencing
+Debe existir una molécula que transporte la información fielmente desde el
+ADN hasta las proteinas, ARN
+ADN -> Transcripción -> ARN (transcrito) -> Traducción -> Proteína
+Cada triplete de nucleótidos forma un codón, y un codón codifica un aminoácio
+Hay 64 codones posibles, pero solo 20 aminoácidos
+https://www.youtube.com/watch?v=5jjf7RYwef8  5' 3'
+https://github.com/mrdbourke/coursera_bioinformatics_and_genetic_algorithm_experiment/blob/master/coursera-bioinformatics-content-and-genetic-algorithm-experiment.ipynb
+se forman un enlace fosfodiéster, un extremo 5' libre y el otro extremo 3'
+esto ayuda a formar cadenas de nucleótidos con sentido 5' 3'
+dos hebras / hélices / cadenas
+https://docs.python.org/3/library/collections.html#collections.Counter
+https://matplotlib.org/3.1.1/gallery/lines_bars_and_markers/categorical_variables.html#sphx-glr-gallery-lines-bars-and-markers-categorical-variables-py
