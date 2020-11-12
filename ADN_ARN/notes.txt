@@ -11,3 +11,9 @@ esto ayuda a formar cadenas de nucleótidos con sentido 5' 3'
 dos hebras / hélices / cadenas
 https://docs.python.org/3/library/collections.html#collections.Counter
 https://matplotlib.org/3.1.1/gallery/lines_bars_and_markers/categorical_variables.html#sphx-glr-gallery-lines-bars-and-markers-categorical-variables-py
+
+
+paso 1:
+hacer la traducción
+
+traduccion: https://www.youtube.com/watch?v=IZF1SKW4e0s
