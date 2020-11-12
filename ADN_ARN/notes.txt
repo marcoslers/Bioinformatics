@@ -17,3 +17,20 @@ paso 1:
 hacer la traducción
 
 traduccion: https://www.youtube.com/watch?v=IZF1SKW4e0s
+split string https://stackoverflow.com/questions/9475241/split-string-every-nth-character
+
+
+'''
+def proteinslist(codons):
+    protein=''
+    proteins=[]
+    for codon in codons:
+        s = codon_table.get(codon)
+        if  s=='UUA' or s=='UAG' or s=='UGA':
+            proteins.append(protein)
+            protein=''
+        else:
+            protein+=amino_acids_table.get(s)
+
+    return proteins
+    '''

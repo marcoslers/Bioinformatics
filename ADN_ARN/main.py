@@ -71,17 +71,23 @@ def traduction(rna_m):
     codons=re.findall('[AUGC]{3}',srna_m)
     return codons
 
-def proteinslist(codons):
-    protein=''
-    proteins=[]
+def get_aminoacids(codons):
+    aminoacids=[]
     for codon in codons:
         s = codon_table.get(codon)
-        if  s=='UUA' or s=='UAG' or s=='UGA':
+        aminoacids.append(s)
+
+    return aminoacids
+
+def get_proteins(aminoacids):
+    protein=''
+    proteins=[]
+    for amn in aminoacids:
+        if  amn=='UUA' or amn=='UAG' or amn=='UGA':
             proteins.append(protein)
             protein=''
         else:
-            protein+=amino_acids_table.get(s)
-
+            protein+=amino_acids_table.get(amn)    
     return proteins
 
 def exercise2c(filename):
@@ -89,8 +95,9 @@ def exercise2c(filename):
     strand3_5 = get_com(seq1)
     rna_m = transcription(strand3_5)
     codons = traduction(rna_m)
-    proteins = proteinslist(codons)
-    print(proteins)
-
-exercise2c('atoh1.txt')
+    aminoacids = get_aminoacids(codons)
+    proteins = get_proteins(aminoacids)
+    return proteins
+    
+print(exercise2c('atoh1.txt'))
 
