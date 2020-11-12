@@ -39,8 +39,8 @@ def exercise2b(filename):
 
 codon_table = {'UUU':'PHE','UUC':'PHE','UUA':'LEU','UUG':'LEU',
                'UCU':'SER','UCC':'SER','UCA':'SER','UCG':'SER',
-               'UAU':'TYR','UAC':'TYR',
-               'UGU':'CYS','UGC':'CYS',
+               'UAU':'TYR','UAC':'TYR','UAA':'UAA','UAG':'UAG',
+               'UGU':'CYS','UGC':'CYS','UGG':'TRP','UGA':'UGA',
                'CUU':'LEU','CUC':'LEU','CUA':'LEU','CUG':'LEU',
                'CCU':'PRO','CCC':'PRO','CCA':'PRO','CCG':'PRO',
                'CAU':'HIS','CAC':'HIS','CAA':'GLN','CAG':'GLN',
@@ -54,6 +54,12 @@ codon_table = {'UUU':'PHE','UUC':'PHE','UUA':'LEU','UUG':'LEU',
                'GAU':'ASP','GAC':'ASP','GAA':'GLU','GAG':'GLU',
                'GGU':'GLY','GGC':'GLY','GGA':'GLY','GGG':'GLY'}
 
+amino_acids_table ={'ALA':'A','CYS':'C','ASP':'D','GLU':'E','PHE':'F',
+                    'GLY':'G','HIS':'H','ILE':'I','LYS':'K','LEU':'L',
+                    'MET':'M','ASN':'N','PRO':'P','GLN':'Q','ARG':'R',
+                    'SER':'S','THR':'T','VAL':'V','TRP':'W','TYR':'Y'}
+
+
 def transcription(strand):
     dic = {'G': 'C', 'T': 'A', 'A': 'U', 'C': 'G'}
     rna_m = [dic.get(base) for base in strand]
@@ -63,15 +69,28 @@ def traduction(rna_m):
     srna_m=''
     srna_m=srna_m.join(rna_m)
     codons=re.findall('[AUGC]{3}',srna_m)
+    return codons
+
+def proteinslist(codons):
+    protein=''
+    proteins=[]
     for codon in codons:
-        print(codon_table.get(codon),' ',end='')
+        s = codon_table.get(codon)
+        if  s=='UUA' or s=='UAG' or s=='UGA':
+            proteins.append(protein)
+            protein=''
+        else:
+            protein+=amino_acids_table.get(s)
+
+    return proteins
 
 def exercise2c(filename):
     seq1 = read_seq(filename)
     strand3_5 = get_com(seq1)
     rna_m = transcription(strand3_5)
-    rna_t = traduction(rna_m)
-
+    codons = traduction(rna_m)
+    proteins = proteinslist(codons)
+    print(proteins)
 
 exercise2c('atoh1.txt')
 
