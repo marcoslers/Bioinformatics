@@ -86,7 +86,7 @@ def get_proteins(aminoacids):
     protein=''
     proteins=[]
     for amn in aminoacids:
-        if  amn=='UUA' or amn=='UAG' or amn=='UGA':
+        if  amn=='UAA' or amn=='UAG' or amn=='UGA':
             proteins.append(protein)
             protein=''
         else:
