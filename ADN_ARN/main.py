@@ -1,11 +1,12 @@
 from collections import Counter
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import re
 
-def read_seq(filename):
+def read_seq(filename):    
     with open(filename) as f:
         seq = f.read()
     seq = seq.replace('\n', '')
+    seq = seq.upper()
     return seq
 
 def get_com(seq):
@@ -19,7 +20,7 @@ def exercise2a(filename):
     seq2 = get_com(seq1)
     return seq2
 
-#print(exercise2a("atoh1.txt"))
+#print(exercise2a('hiv-1.txt'))
 
 def plot_bar_graph(names,values,title,xlbl,ylbl):
     plt.bar(names,values)
@@ -33,7 +34,9 @@ def exercise2b(filename):
     dic = Counter(list(seq))
     return dic
 
-#dic = exercise2b('atoh1.txt')
+dic = exercise2b('hiv-1.txt')
+
+#print(dic)
 
 #plot_bar_graph(list(dic.keys()),list(dic.values()),'Nitrogenous base ocurrence','','')
 
@@ -99,5 +102,5 @@ def exercise2c(filename):
     proteins = get_proteins(aminoacids)
     return proteins
     
-print(exercise2c('atoh1.txt'))
+print(exercise2c('hiv-1.txt'))
 
