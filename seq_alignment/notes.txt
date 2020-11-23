@@ -1,0 +1,11 @@
+https://www.programiz.com/python-programming/matrix
+https://numpy.org/doc/stable/reference/generated/numpy.zeros.html
+https://repositoriotec.tec.ac.cr/bitstream/handle/2238/6707/mejora_algoritmos_bioinformatica.pdf?sequence=1&isAllowed=y
+https://www.cs.sjsu.edu/~aid/cs152/NeedlemanWunsch.pdf
+
+GTACGTATC
+GTCCTAC
+
+
+GCCAATGAC
+TGGCATTCCGA
