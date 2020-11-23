@@ -78,9 +78,10 @@ for i in range(2,nseq1):
         diag = mtx[i-1][j-1].getValue() +getScore(seq1[i-1],seq2[j-1])
         up   = mtx[i-1][j].getValue()-2
         left = mtx[i][j-1].getValue()-2
-
         mtx[i][j] = getMax(diag,up,left)
         #print(mtx[i][j].getValue(),' ',end='')
+    
+    #print('')
 
 i,j=nseq1-1,nseq2-1
 
@@ -107,6 +108,13 @@ while(flag):
             flag=False
         break
 
+
+for i in range(nseq1):
+    for j in range(nseq2):
+        print(mtx[i][j].getValue(),' ',end='')
+    print('')
+    
+print('')
 print(top)
 print(bot)
 
