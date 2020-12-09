@@ -42,4 +42,5 @@ for i in range (lnseq1):
         diag = m[i-1][j-1].getVal() +s(seq1[i-1],seq2[j-1])
         up   = m[i-1][j].getVal()-gapPenalty
         left = m[i][j-1].getVal()-gapPenalty
-        
+
+|
