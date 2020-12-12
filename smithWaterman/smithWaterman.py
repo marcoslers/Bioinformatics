@@ -11,7 +11,6 @@ class MaxValue:
             self.i=i
             self.j=j
 
-#   Matriz de sustitucion
 def s(r,c):
     if r==c: return 3
     elif r=='G' and c=='A' or r=='A' and c=='G': return 1
@@ -23,19 +22,11 @@ def getMax(diag,up,left):
     if diag>up and diag>left: c = Cell(diag,'diag')
     elif up>diag and up>left: c = Cell(up,'up')
     elif left>diag and left>up: c = Cell(left,'left')
-    elif diag == up and diag > left:
-        c = Cell(diag,'diag')
-        #c.addPos('up')
-    elif diag == left and diag >up:
-        c=Cell(diag,'diag')
-        #c.addPos('left')
-    elif left==up and left>diag:
-        c=Cell(left,'left')
-        #c.addPos('up')
-    else:
-        c=Cell(diag,'diag')
-        #c.addPos('up')
-        #c.addPos('left')
+    elif diag == up and diag > left: c = Cell(diag,'diag')
+    elif diag == left and diag >up: c=Cell(diag,'diag')
+    elif left==up and left>diag: c=Cell(left,'left')
+    else: c=Cell(diag,'diag')
+
     return c
 
 def read_seq(filename):    
@@ -44,14 +35,11 @@ def read_seq(filename):
     seq = (seq.replace('\n', '')).upper()
     return seq
 
-#   Lectura de archivos
 seq1 = list(read_seq('seq1.txt'))
 seq2 = list(read_seq('seq2.txt'))
 
-#   Longitudes de la matriz
 lnseq1, lnseq2 = len(seq1)+1, len(seq2)+1
 
-#   Creacion de la matriz de objetos Cell
 M, rows = [],[]
 M = [[Cell(0,None) for j in range(lnseq2)] for i in range(lnseq1)] 
 
@@ -68,7 +56,7 @@ for i in range (1,lnseq1):
 
         M[i][j]=Cell(0,None) if c.value<0 else c
 
-        if M[i][j].value>=maxv.value: 
+        if M[i][j].value>maxv.value: 
             maxv.value=M[i][j].value
             maxv.i, maxv.j =i,j
 
